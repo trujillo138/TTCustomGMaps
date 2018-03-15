@@ -26,7 +26,7 @@ class GoogleMapManager {
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.mapStyle = try! GMSMapStyle(jsonString: getCustomMapStyleInJSONString())
         mapView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(mapView)
+        view.insertSubview(mapView, at: 0)
         NSLayoutConstraint.activate([mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
                                      mapView.topAnchor.constraint(equalTo: view.topAnchor),
                                      mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
