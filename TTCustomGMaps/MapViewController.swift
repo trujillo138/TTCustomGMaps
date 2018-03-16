@@ -17,8 +17,6 @@ class MapViewController: UIViewController, GoogleMapManagerHandler {
     
     var mapView: GMSMapView?
     
-    var marker: TTGoogleMapMarker?
-    
     //MARK: Viewcontroller Lifecycl
     
     override func viewDidLoad() {
@@ -27,22 +25,9 @@ class MapViewController: UIViewController, GoogleMapManagerHandler {
     }
     
     private func loadGoogleMap() {
-        mapView = mapManager?.setGoogleMap(inView: self.view)
-        mapView?.moveCamera(GMSCameraUpdate.setTarget(CLLocationCoordinate2D(latitude: 10, longitude: 10)))
+        let latitude = 4.6951199
+        let longitude = -74.030881
+        self.mapView = mapManager?.setGoogleMap(inView: self.view, latitude: latitude, longitude: longitude)
     }
-    
-    @IBAction func tappedMap() {
-        if let m = marker {
-            m.changeColor()
-        } else {
-            let position = CLLocationCoordinate2D(latitude: 10, longitude: 10)
-            let marker = TTGoogleMapMarker(position: position)
-            marker.title = "My first marker"
-            marker.appearAnimation = .pop
-            marker.map = mapView
-            self.marker = marker
-        }
-    }
-
 
 }

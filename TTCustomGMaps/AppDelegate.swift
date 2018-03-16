@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        mapManager.startGoogleMapsServices(withKey: "AIzaSyAzof3bSwFNqNN8XNtpH7J_AnrL6ICczW4")
+        mapManager.startGoogleMapsServices(withKey: "AIzaSyAzof3bSwFNqNN8XNtpH7J_AnrL6ICczW4", zoom: 17.5)
         setManagerForInitialViewController()
         return true
     }
