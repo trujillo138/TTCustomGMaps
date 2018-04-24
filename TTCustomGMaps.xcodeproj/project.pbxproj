@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		279052432261CE988B8E2E7C /* Pods_TTCustomGMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 543BB4D39E94F99361F48EA3 /* Pods_TTCustomGMaps.framework */; };
 		403F4F4E20501E2B0075AAD6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403F4F4D20501E2B0075AAD6 /* MapViewController.swift */; };
+		4088A756208FD0840071405A /* CABasicAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4088A755208FD0840071405A /* CABasicAnimation.swift */; };
 		40A2CECB2048359F0089BB5C /* GoogleMapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A2CECA2048359F0089BB5C /* GoogleMapManager.swift */; };
 		40C9C1622059FEA20074279C /* TTGoogleMapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C9C1612059FEA20074279C /* TTGoogleMapMarker.swift */; };
 		40D50819205C5C600046A77A /* MapDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D50818205C5C600046A77A /* MapDataSource.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		403F4F4D20501E2B0075AAD6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		4088A755208FD0840071405A /* CABasicAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CABasicAnimation.swift; sourceTree = "<group>"; };
 		40A2CECA2048359F0089BB5C /* GoogleMapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapManager.swift; sourceTree = "<group>"; };
 		40C9C1612059FEA20074279C /* TTGoogleMapMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTGoogleMapMarker.swift; sourceTree = "<group>"; };
 		40D50818205C5C600046A77A /* MapDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDataSource.swift; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4088A752208FD05E0071405A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4088A755208FD0840071405A /* CABasicAnimation.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		40A2CEC9204835840089BB5C /* GMapManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +104,7 @@
 		40FE6DB4204833DB00DF469D /* TTCustomGMaps */ = {
 			isa = PBXGroup;
 			children = (
+				4088A752208FD05E0071405A /* Extensions */,
 				40A2CEC9204835840089BB5C /* GMapManager */,
 				40FE6DB5204833DB00DF469D /* AppDelegate.swift */,
 				40FE6DB9204833DB00DF469D /* Main.storyboard */,
@@ -237,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40A2CECB2048359F0089BB5C /* GoogleMapManager.swift in Sources */,
+				4088A756208FD0840071405A /* CABasicAnimation.swift in Sources */,
 				403F4F4E20501E2B0075AAD6 /* MapViewController.swift in Sources */,
 				40FE6DB6204833DB00DF469D /* AppDelegate.swift in Sources */,
 				40D50819205C5C600046A77A /* MapDataSource.swift in Sources */,
