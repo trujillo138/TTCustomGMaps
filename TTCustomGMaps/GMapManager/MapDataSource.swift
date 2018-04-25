@@ -31,25 +31,18 @@ extension MapDataSource {
         var markers: [GMSMarker] = []
         let starbucksMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: 4.6948014, longitude: -74.0314367))
         starbucksMarker.icon = GMSMarker.markerImage(with: .green)
-        starbucksMarker.title = "Starbucks"
         let misterRibsMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: 4.695352, longitude: -74.0312434))
         misterRibsMarker.icon = GMSMarker.markerImage(with: .yellow)
-        misterRibsMarker.title = "Mister Ribs"
         let laMarMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: 4.6953995, longitude: -74.0306507))
         laMarMarker.icon = GMSMarker.markerImage(with: .blue)
-        laMarMarker.title = "La Mar"
         let inkasMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: 4.6955998, longitude: -74.030485))
         inkasMarker.icon = GMSMarker.markerImage(with: .red)
-        inkasMarker.title = "14 Inkas"
         let biconoMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: 4.6952293, longitude: -74.0317908))
         biconoMarker.icon = GMSMarker.markerImage(with: .cyan)
-        biconoMarker.title = "Bicono"
         let teEncantareMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: 4.6944422, longitude: -74.0311205))
         teEncantareMarker.icon = GMSMarker.markerImage(with: .brown)
-        teEncantareMarker.title = "Te Encantaré"
         let rodizioMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: 4.6950682, longitude: -74.0303037))
         rodizioMarker.icon = GMSMarker.markerImage(with: .orange)
-        rodizioMarker.title = "El Rodizio"
         markers.append(starbucksMarker)
         markers.append(misterRibsMarker)
         markers.append(laMarMarker)
@@ -64,25 +57,18 @@ extension MapDataSource {
         var markers: [GMSMarker] = []
         let gordoMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: 4.6498152, longitude: -74.0555161))
         gordoMarker.icon = GMSMarker.markerImage(with: .green)
-        gordoMarker.title = "Gordo"
         let criterionRibsMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: 4.6511724, longitude: -74.0558309))
         criterionRibsMarker.icon = GMSMarker.markerImage(with: .yellow)
-        criterionRibsMarker.title = "Criterion"
         let crepesMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: 4.6514093, longitude: -74.0560993))
         crepesMarker.icon = GMSMarker.markerImage(with: .blue)
-        crepesMarker.title = "Crepes Artesano"
         let diaQueMeQuierasMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: 4.651040, longitude: -74.0558142))
         diaQueMeQuierasMarker.icon = GMSMarker.markerImage(with: .red)
-        diaQueMeQuierasMarker.title = "El día que me quieras"
         let divinaComediaMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: 4.652771, longitude: -74.0554828))
         divinaComediaMarker.icon = GMSMarker.markerImage(with: .cyan)
-        divinaComediaMarker.title = "La Divina Comedia"
         let aguaPatosMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: 4.6538533, longitude: -74.0546959))
         aguaPatosMarker.icon = GMSMarker.markerImage(with: .brown)
-        aguaPatosMarker.title = "Al agua patos"
         let homeBurgersMarker = GMSMarker(position: CLLocationCoordinate2D(latitude: 4.6525965, longitude: -74.0550032))
         homeBurgersMarker.icon = GMSMarker.markerImage(with: .orange)
-        homeBurgersMarker.title = "Home Burgers"
         markers.append(gordoMarker)
         markers.append(criterionRibsMarker)
         markers.append(crepesMarker)

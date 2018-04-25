@@ -25,6 +25,8 @@ class GoogleMapManager: NSObject {
     
     private var defaultZoom: Float = 0
     
+    var infoWindow: MapInfoView?
+    
     var dataSource: TTMapDataSource?
     
     func startGoogleMapsServices(withKey key: String, zoom: Float = 15) {
@@ -67,6 +69,30 @@ extension GoogleMapManager: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         movedMapToPostion(mapView: mapView, position: position)
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        infoWindow?.removeFromSuperview()
+        let location = marker.position
+        var center = mapView.projection.point(for: location)
+        let view = MapInfoView(frame: CGRect(origin: .zero, size: CGSize(width: 230, height: 175)))
+        self.centerMapInPoint(center, inMapView: mapView)
+        center = mapView.projection.point(for: location)
+        view.center = CGPoint(x: center.x, y: center.y - 125)
+        mapView.addSubview(view)
+        self.infoWindow = view
+        return true
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        infoWindow?.removeFromSuperview()
+    }
+    
+    private func centerMapInPoint(_ point: CGPoint, inMapView mapView: GMSMapView) {
+        let target = mapView.projection.coordinate(for: point)
+        let update = GMSCameraUpdate.setCamera(GMSCameraPosition(target: target, zoom: mapView.camera.zoom,
+                                                                 bearing: mapView.camera.bearing, viewingAngle: mapView.camera.viewingAngle))
+        mapView.moveCamera(update)
     }
     
 }
