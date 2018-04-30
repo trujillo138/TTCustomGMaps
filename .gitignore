@@ -2,6 +2,8 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
+.DS_Store
+
 ## Build generated
 build/
 DerivedData/
@@ -15,9 +17,11 @@ DerivedData/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
+xcuserdata
 xcuserdata/
-
-## Other
+*.xcworkspace
+*.xcuserdatad
+!default.xcworkspace
 *.moved-aside
 *.xccheckout
 *.xcscmblueprint
@@ -64,4 +68,3 @@ Carthage/Build
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
-fastlane/test_output
