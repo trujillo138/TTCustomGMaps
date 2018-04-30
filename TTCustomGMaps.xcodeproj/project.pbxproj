@@ -10,6 +10,9 @@
 		279052432261CE988B8E2E7C /* Pods_TTCustomGMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 543BB4D39E94F99361F48EA3 /* Pods_TTCustomGMaps.framework */; };
 		4021E216207ECE6400857BD3 /* MapInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E215207ECE6400857BD3 /* MapInfoView.swift */; };
 		403F4F4E20501E2B0075AAD6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403F4F4D20501E2B0075AAD6 /* MapViewController.swift */; };
+		40880E8D2097C9160005F938 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40880E8C2097C9160005F938 /* PlaceDetailViewController.swift */; };
+		40880E902097C9B30005F938 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40880E8F2097C9B30005F938 /* Place.swift */; };
+		40880E922097CAB50005F938 /* PlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40880E912097CAB50005F938 /* PlaceManager.swift */; };
 		4088A756208FD0840071405A /* CABasicAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4088A755208FD0840071405A /* CABasicAnimation.swift */; };
 		40A2CECB2048359F0089BB5C /* GoogleMapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A2CECA2048359F0089BB5C /* GoogleMapManager.swift */; };
 		40C1875A208F6548008BB39C /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C18759208F6548008BB39C /* StarView.swift */; };
@@ -25,6 +28,9 @@
 /* Begin PBXFileReference section */
 		4021E215207ECE6400857BD3 /* MapInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInfoView.swift; sourceTree = "<group>"; };
 		403F4F4D20501E2B0075AAD6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		40880E8C2097C9160005F938 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
+		40880E8F2097C9B30005F938 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		40880E912097CAB50005F938 /* PlaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceManager.swift; sourceTree = "<group>"; };
 		4088A755208FD0840071405A /* CABasicAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CABasicAnimation.swift; sourceTree = "<group>"; };
 		40A2CECA2048359F0089BB5C /* GoogleMapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapManager.swift; sourceTree = "<group>"; };
 		40C18759208F6548008BB39C /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
@@ -71,6 +77,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		40880E8E2097C9AA0005F938 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				40880E8F2097C9B30005F938 /* Place.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4088A752208FD05E0071405A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +99,7 @@
 				40A2CECA2048359F0089BB5C /* GoogleMapManager.swift */,
 				40C9C1612059FEA20074279C /* TTGoogleMapMarker.swift */,
 				40D50818205C5C600046A77A /* MapDataSource.swift */,
+				40880E912097CAB50005F938 /* PlaceManager.swift */,
 			);
 			path = GMapManager;
 			sourceTree = "<group>";
@@ -120,6 +135,7 @@
 		40FE6DB4204833DB00DF469D /* TTCustomGMaps */ = {
 			isa = PBXGroup;
 			children = (
+				40880E8E2097C9AA0005F938 /* Model */,
 				40C18757208F64C6008BB39C /* Views */,
 				4088A752208FD05E0071405A /* Extensions */,
 				40A2CEC9204835840089BB5C /* GMapManager */,
@@ -128,6 +144,7 @@
 				40FE6DBC204833DB00DF469D /* Assets.xcassets */,
 				40FE6DBE204833DB00DF469D /* LaunchScreen.storyboard */,
 				40FE6DC1204833DB00DF469D /* Info.plist */,
+				40880E8C2097C9160005F938 /* PlaceDetailViewController.swift */,
 				403F4F4D20501E2B0075AAD6 /* MapViewController.swift */,
 			);
 			path = TTCustomGMaps;
@@ -269,9 +286,12 @@
 				403F4F4E20501E2B0075AAD6 /* MapViewController.swift in Sources */,
 				40FE6DB6204833DB00DF469D /* AppDelegate.swift in Sources */,
 				4021E216207ECE6400857BD3 /* MapInfoView.swift in Sources */,
+				40880E922097CAB50005F938 /* PlaceManager.swift in Sources */,
 				40C1875C20900ABF008BB39C /* StarViewCollection.swift in Sources */,
 				40D50819205C5C600046A77A /* MapDataSource.swift in Sources */,
+				40880E8D2097C9160005F938 /* PlaceDetailViewController.swift in Sources */,
 				40C1875A208F6548008BB39C /* StarView.swift in Sources */,
+				40880E902097C9B30005F938 /* Place.swift in Sources */,
 				40C9C1622059FEA20074279C /* TTGoogleMapMarker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

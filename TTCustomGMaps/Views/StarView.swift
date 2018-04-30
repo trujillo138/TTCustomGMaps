@@ -59,6 +59,7 @@ class StarView: UIView {
         if filled {
             UIColor.blue.setFill()
             star.fill()
+            CABasicAnimation.addRotationAnimation(toView: self)
         } else {
             UIColor.blue.setStroke()
             star.stroke()

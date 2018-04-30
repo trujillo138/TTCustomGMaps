@@ -29,16 +29,19 @@ class GoogleMapManager: NSObject {
     
     var dataSource: TTMapDataSource?
     
+    var infoViewDelegate: InfoViewDelegate?
+    
     func startGoogleMapsServices(withKey key: String, zoom: Float = 15) {
         GMSServices.provideAPIKey(key)
         defaultZoom = zoom
     }
     
-    func setGoogleMap(inView view: UIView, latitude: Double, longitude: Double) -> GMSMapView {
+    func setGoogleMap(inView view: UIView, latitude: Double, longitude: Double, delegate: InfoViewDelegate) -> GMSMapView {
         let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: defaultZoom)
         let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
         mapView.mapStyle = try? GMSMapStyle(jsonString: getCustomMapStyleInJSONString())
         mapView.delegate = self
+        self.infoViewDelegate = delegate
         dataSource = MapDataSource()
         mapView.translatesAutoresizingMaskIntoConstraints = false
         view.insertSubview(mapView, at: 0)
@@ -79,6 +82,7 @@ extension GoogleMapManager: GMSMapViewDelegate {
         self.centerMapInPoint(center, inMapView: mapView)
         center = mapView.projection.point(for: location)
         view.center = CGPoint(x: center.x, y: center.y - 125)
+        view.delegate = self.infoViewDelegate
         mapView.addSubview(view)
         self.infoWindow = view
         return true

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kr5-os-VGS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tBx-SF-338">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,10 +22,83 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="JIV-3Y-IM6"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dxy-4h-wv9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QnE-vI-bkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-174" y="125"/>
+            <point key="canvasLocation" x="764" y="124.58770614692655"/>
+        </scene>
+        <!--Place Detail View Controller-->
+        <scene sceneID="6tz-sf-bF9">
+            <objects>
+                <viewController storyboardIdentifier="PlaceDetail" id="DRZ-QQ-Z9T" customClass="PlaceDetailViewController" customModule="TTCustomGMaps" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k1S-0D-vfw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1zR-XV-8aQ">
+                                <rect key="frame" x="16" y="20" width="131.5" height="131.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1zR-XV-8aQ" secondAttribute="height" multiplier="1:1" id="4vf-jh-GUv"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="O79-hu-Xe9">
+                                <rect key="frame" x="8" y="159.5" width="359" height="499.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXT-9E-syi" customClass="StarViewCollection" customModule="TTCustomGMaps" customModuleProvider="target">
+                                <rect key="frame" x="155" y="60.5" width="212" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="CKn-rt-NDp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fXT-9E-syi" firstAttribute="centerY" secondItem="1zR-XV-8aQ" secondAttribute="centerY" id="5h3-nN-R8f"/>
+                            <constraint firstItem="vhr-i1-ThN" firstAttribute="trailing" secondItem="fXT-9E-syi" secondAttribute="trailing" constant="8" id="9VB-5d-Yhf"/>
+                            <constraint firstItem="O79-hu-Xe9" firstAttribute="leading" secondItem="vhr-i1-ThN" secondAttribute="leading" constant="8" id="Abg-bW-zam"/>
+                            <constraint firstItem="1zR-XV-8aQ" firstAttribute="top" secondItem="vhr-i1-ThN" secondAttribute="top" id="Fmi-8H-mo0"/>
+                            <constraint firstItem="1zR-XV-8aQ" firstAttribute="width" secondItem="k1S-0D-vfw" secondAttribute="width" multiplier="0.35" id="Mq1-TS-7NE"/>
+                            <constraint firstItem="vhr-i1-ThN" firstAttribute="trailing" secondItem="O79-hu-Xe9" secondAttribute="trailing" constant="8" id="QAt-WG-jve"/>
+                            <constraint firstItem="fXT-9E-syi" firstAttribute="leading" secondItem="1zR-XV-8aQ" secondAttribute="trailing" constant="8" id="Ujx-EF-GEh"/>
+                            <constraint firstItem="O79-hu-Xe9" firstAttribute="top" secondItem="1zR-XV-8aQ" secondAttribute="bottom" constant="8" id="aR5-id-RfP"/>
+                            <constraint firstItem="1zR-XV-8aQ" firstAttribute="leading" secondItem="vhr-i1-ThN" secondAttribute="leading" constant="16" id="syE-Kv-VYt"/>
+                            <constraint firstItem="vhr-i1-ThN" firstAttribute="bottom" secondItem="O79-hu-Xe9" secondAttribute="bottom" constant="8" id="yfV-nJ-e6e"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vhr-i1-ThN"/>
+                    </view>
+                    <connections>
+                        <outlet property="placeDescriptionTextArea" destination="O79-hu-Xe9" id="AS4-eH-zbi"/>
+                        <outlet property="placeImage" destination="1zR-XV-8aQ" id="ADX-h8-oXp"/>
+                        <outlet property="starViewCollection" destination="fXT-9E-syi" id="2Ce-2z-dkC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ugC-G8-jNC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1583.2" y="124.58770614692655"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uZy-Qv-1Pj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tBx-SF-338" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KIJ-kE-yjz">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kr5-os-VGS" kind="relationship" relationship="rootViewController" id="3Oc-sn-g8o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9l8-Ss-uQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-175.19999999999999" y="124.58770614692655"/>
         </scene>
     </scenes>
 </document>

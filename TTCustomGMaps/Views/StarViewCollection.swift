@@ -12,7 +12,7 @@ class StarViewCollection: UIView {
 
     //MARK: Properties
     private let paddingBetweenStars: CGFloat = 4.0
-    private var starModels: [StarViewModel] = [] {
+    var starModels: [StarViewModel] = [] {
         didSet {
             self.setNeedsDisplay()
         }

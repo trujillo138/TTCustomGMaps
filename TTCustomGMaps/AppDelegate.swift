@@ -25,7 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func setManagerForInitialViewController() {
-        guard var initialVC = window?.rootViewController as? GoogleMapManagerHandler else { return }
+        guard let navVC = window?.rootViewController as? UINavigationController,
+            var initialVC = navVC.viewControllers.first as? GoogleMapManagerHandler  else { return }
         initialVC.mapManager = mapManager
         
     }

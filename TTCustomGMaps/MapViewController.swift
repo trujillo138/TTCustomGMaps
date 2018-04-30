@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 
-class MapViewController: UIViewController, GoogleMapManagerHandler {
+class MapViewController: UIViewController, GoogleMapManagerHandler, InfoViewDelegate {
 
     //MARK: Properties
     
@@ -27,7 +27,15 @@ class MapViewController: UIViewController, GoogleMapManagerHandler {
     private func loadGoogleMap() {
         let latitude = 4.6951199
         let longitude = -74.030881
-        self.mapView = mapManager?.setGoogleMap(inView: self.view, latitude: latitude, longitude: longitude)
+        self.mapView = mapManager?.setGoogleMap(inView: self.view, latitude: latitude, longitude: longitude, delegate: self)
+    }
+    
+    func tappedOnMaker() {
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        guard let detailController = main.instantiateViewController(withIdentifier: "PlaceDetail") as? PlaceDetailViewController else { return }
+        let place = Place(imageURL: "", name: "Some place", score: 3, description: "This is some place fedknfaljksdhfkljsadbn fkjsdakjfsandlkf asldkfhj sal;kdfj lkas;")
+        detailController.place = place
+        self.navigationController?.pushViewController(detailController, animated: true)
     }
 
 }

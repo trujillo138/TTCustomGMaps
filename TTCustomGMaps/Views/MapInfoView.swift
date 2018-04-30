@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol InfoViewDelegate {
+    func tappedOnMaker()
+}
+
 class MapInfoView: UIView {
 
     //MARK: Properties
@@ -31,6 +35,7 @@ class MapInfoView: UIView {
         return CGSize(width: bounds.width * 0.6, height: bounds.height * 0.2)
     }
     private let infoViewBackgroundColor = UIColor.white
+    var delegate: InfoViewDelegate?
     
     //MARK: Drawing
     
@@ -150,7 +155,7 @@ class MapInfoView: UIView {
     //MARK: Actions
     
     @objc func tappedActionButton(sender: UIButton) {
-        print("Tapped button")
+        delegate?.tappedOnMaker()
     }
     
     //MARK: Initializers
