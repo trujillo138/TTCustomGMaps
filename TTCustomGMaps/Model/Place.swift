@@ -6,7 +6,7 @@
 //  Copyright © 2018 TomApps. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Place {
     
@@ -14,4 +14,7 @@ struct Place {
     var name: String
     var score: Int
     var description: String
+    var latitude: Double
+    var longitude: Double
+    var iconColor: UIColor
 }

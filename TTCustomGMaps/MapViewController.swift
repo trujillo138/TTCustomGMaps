@@ -30,10 +30,10 @@ class MapViewController: UIViewController, GoogleMapManagerHandler, InfoViewDele
         self.mapView = mapManager?.setGoogleMap(inView: self.view, latitude: latitude, longitude: longitude, delegate: self)
     }
     
-    func tappedOnMaker() {
+    func tappedOnMaker(_ marker: TTGoogleMapMarker) {
         let main = UIStoryboard(name: "Main", bundle: nil)
-        guard let detailController = main.instantiateViewController(withIdentifier: "PlaceDetail") as? PlaceDetailViewController else { return }
-        let place = Place(imageURL: "", name: "Some place", score: 3, description: "This is some place fedknfaljksdhfkljsadbn fkjsdakjfsandlkf asldkfhj sal;kdfj lkas;")
+        guard let detailController = main.instantiateViewController(withIdentifier: "PlaceDetail") as? PlaceDetailViewController,
+            let place = marker.place else { return }
         detailController.place = place
         self.navigationController?.pushViewController(detailController, animated: true)
     }

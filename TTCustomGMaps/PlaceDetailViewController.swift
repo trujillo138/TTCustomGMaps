@@ -26,6 +26,8 @@ class PlaceDetailViewController: UIViewController {
         placeDescriptionTextArea.text = place.description
         let manager = PlaceManager()
         starViewCollection.starModels = manager.starViewModelForScore(place.score)
+        placeImage.image = UIImage(named: place.imageURL)
+        self.title = place.name
     }
 
 }

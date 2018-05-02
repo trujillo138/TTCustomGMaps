@@ -8,8 +8,23 @@
 
 import UIKit
 
+struct InfoViewModel {
+    var name: String
+    var score: Int
+    var imageURL: String
+    var starModel: [StarViewModel] {
+        let placeManager = PlaceManager()
+        return placeManager.starViewModelForScore(self.score)
+    }
+    
+    static func CreateFromPlace(_ place: Place) -> InfoViewModel {
+        let model = InfoViewModel(name: place.name, score: place.score, imageURL: place.imageURL)
+        return model
+    }
+}
+
 protocol InfoViewDelegate {
-    func tappedOnMaker()
+    func tappedOnMaker(_ marker: TTGoogleMapMarker)
 }
 
 class MapInfoView: UIView {
@@ -36,7 +51,15 @@ class MapInfoView: UIView {
     }
     private let infoViewBackgroundColor = UIColor.white
     var delegate: InfoViewDelegate?
-    
+    var marker: TTGoogleMapMarker?
+    var infoViewModel: InfoViewModel? {
+        didSet {
+            guard let model = infoViewModel else { return }
+            self.infoImageView.image = UIImage(named: model.imageURL)
+            self.infoLabel.text = model.name
+            self.infoStarView.starModels = model.starModel
+        }
+    }
     //MARK: Drawing
     
     private func setup() {
@@ -155,7 +178,8 @@ class MapInfoView: UIView {
     //MARK: Actions
     
     @objc func tappedActionButton(sender: UIButton) {
-        delegate?.tappedOnMaker()
+        guard let mark = self.marker else { return }
+        delegate?.tappedOnMaker(mark)
     }
     
     //MARK: Initializers

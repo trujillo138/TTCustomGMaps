@@ -17,7 +17,7 @@ protocol GoogleMapManagerHandler {
 
 protocol TTMapDataSource {
     
-    func mapViewMarkersForPostion(mapView: GMSMapView, latitude: Double, longitude: Double, zoom: Float, response: ([GMSMarker]) -> ())
+    func mapViewMarkersForPostion(mapView: GMSMapView, latitude: Double, longitude: Double, zoom: Float, response: ([TTGoogleMapMarker]) -> ())
     
 }
 
@@ -74,6 +74,10 @@ extension GoogleMapManager: GMSMapViewDelegate {
         movedMapToPostion(mapView: mapView, position: position)
     }
     
+    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+        infoWindow?.removeFromSuperview()
+    }
+    
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         infoWindow?.removeFromSuperview()
         let location = marker.position
@@ -83,6 +87,10 @@ extension GoogleMapManager: GMSMapViewDelegate {
         center = mapView.projection.point(for: location)
         view.center = CGPoint(x: center.x, y: center.y - 125)
         view.delegate = self.infoViewDelegate
+        guard let ttMarker = marker as? TTGoogleMapMarker,
+            let place = ttMarker.place else { return false}
+        view.marker = ttMarker
+        view.infoViewModel = InfoViewModel.CreateFromPlace(place)
         mapView.addSubview(view)
         self.infoWindow = view
         return true
